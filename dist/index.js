@@ -7,9 +7,11 @@ var express_1 = __importDefault(require("express"));
 var dotenv_1 = __importDefault(require("dotenv"));
 var datasource_1 = require("./datasource");
 var userRoute_1 = __importDefault(require("./routes/userRoute")); // Correctly importing the userRoute
+var cors_1 = __importDefault(require("cors"));
 dotenv_1.default.config();
 var app = (0, express_1.default)();
 var PORT = process.env.PORT || 4000;
+app.use((0, cors_1.default)());
 app.use(express_1.default.json());
 app.use("/api/users", userRoute_1.default); // Use the userRoute for handling requests to /api/users
 datasource_1.AppDataSource.initialize()

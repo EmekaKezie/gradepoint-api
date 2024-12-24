@@ -2,11 +2,14 @@ import express from "express";
 import dotenv from "dotenv";
 import { AppDataSource } from "./datasource";
 import userRoute from "./routes/userRoute";  // Correctly importing the userRoute
+import cors from "cors"; 
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 4000;
+
+app.use(cors());
 
 app.use(express.json());
 app.use("/api/users", userRoute);  // Use the userRoute for handling requests to /api/users
