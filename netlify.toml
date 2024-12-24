@@ -7,3 +7,9 @@ publish = "dist"
 from = "/*"
 to = "/index.html"
 status = 200
+
+# Add specific redirect rules for API routes to ensure they don't conflict with the frontend
+[[redirects]]
+from = "/api/*"
+to = "/.netlify/functions/api/*"
+status = 200
