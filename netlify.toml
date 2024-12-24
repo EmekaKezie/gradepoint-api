@@ -1,0 +1,9 @@
+[build]
+command = "yarn build:netlify"
+functions = "dist/netlify"
+publish = "dist"
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
