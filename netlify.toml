@@ -1,15 +1,14 @@
 [build]
 command = "yarn build:netlify"
-functions = "dist/netlify"
+functions = "dist/netlify/functions"
 publish = "dist"
+
+[[redirects]]
+from = "/api/*"
+to = "/.netlify/functions/netlify"
+status = 200
 
 [[redirects]]
 from = "/*"
 to = "/index.html"
-status = 200
-
-# Add specific redirect rules for API routes to ensure they don't conflict with the frontend
-[[redirects]]
-from = "/api/*"
-to = "/.netlify/functions/api/*"
 status = 200

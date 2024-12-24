@@ -27,7 +27,7 @@
     "build": "tsc",
     "start": "ts-node src/index.ts",
     "typeorm": "typeorm-ts-node-commonjs",
-    "build:netlify": "tsc && cp -R dist/netlify ./",
+   "build:netlify": "tsc && cp -R dist/netlify/* ./dist/netlify/functions",
     "deploy": "netlify deploy"
   }
 }
